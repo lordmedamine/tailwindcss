@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BEST SHOP EVER</title>
+  </head>
+  <body>
+    <!--NavBar-->
+    <section id="nav">
+      <nav class="bg-gray-800">
+        <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+          <div class="relative flex h-16 items-center justify-between">
+            <div
+              class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start"
+            >
+              <!-- logo-->
+              <div class="flex flex-shrink-0 items-center">
+                <img
+                  class="h-8 w-auto"
+                  src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=500"
+                  alt="Your Company"
+                />
+              </div>
+
+              <div class="hidden sm:ml-6 sm:block">
+                <div class="flex space-x-4">
+                  <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
+                  <a
+                    href="#Home"
+                    class="rounded-md bg-gray-900 px-3 py-2 text-sm font-medium text-white"
+                    aria-current="page"
+                    >Home</a
+                  >
+                  <a
+                    href="#AboutUs"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >About us</a
+                  >
+                  <a
+                    href="#products"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >join us
+                  </a>
+                  <a
+                    href="#subscribe"
+                    class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white"
+                    >contact us
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- profifle and notification section -->
+            <div
+              class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
+            >
+              <!--notification button-->
+              <button
+                type="button"
+                class="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              >
+                <svg
+                  class="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                  />
+                </svg>
+              </button>
+
+              <!-- Profile button -->
+              <div class="relative ml-3">
+                <div>
+                  <button
+                    type="button"
+                    class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                    id="user-menu-button"
+                    aria-expanded="false"
+                    aria-haspopup="true"
+                  >
+                    <img
+                      class="h-8 w-8 rounded-full"
+                      src="data:image/png;base64,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"
+                      alt=""
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </section>
+
+    <section id="Home">
+      <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
+        <img
+          src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&crop=focalpoint&fp-y=.8&w=2830&h=1500&q=80&blend=111827&sat=-100&exp=15&blend-mode=multiply"
+          alt=""
+          class="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
+        />
+        <div
+          class="hidden sm:absolute sm:-top-10 sm:right-1/2 sm:-z-10 sm:mr-10 sm:block sm:transform-gpu sm:blur-3xl"
+          aria-hidden="true"
+        >
+          <div
+            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div
+          class="absolute -top-52 left-1/2 -z-10 -translate-x-1/2 transform-gpu blur-3xl sm:top-[-28rem] sm:ml-16 sm:translate-x-0 sm:transform-gpu"
+          aria-hidden="true"
+        >
+          <div
+            class="aspect-[1097/845] w-[68.5625rem] bg-gradient-to-tr from-[#ff4694] to-[#776fff] opacity-20"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl lg:mx-0">
+            <h2
+              class="text-4xl font-bold tracking-tight text-white sm:text-6xl"
+            >
+              Work with us
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-gray-300">
+              Animated entities of great importance exist that are not
+              undesirable. Those who indulge in leisurely enjoyment. Elite are
+              the ones who love and enjoy the taste of any food."
+            </p>
+          </div>
+          <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+            <div
+              class="grid grid-cols-1 gap-x-8 gap-y-6 text-base font-semibold leading-7 text-white sm:grid-cols-2 md:flex lg:gap-x-10"
+            >
+              <a href="#">Open roles <span aria-hidden="true">&rarr;</span></a>
+              <a href="#"
+                >Internship program <span aria-hidden="true">&rarr;</span></a
+              >
+              <a href="#">Our values <span aria-hidden="true">&rarr;</span></a>
+              <a href="#"
+                >Meet our leadership <span aria-hidden="true">&rarr;</span></a
+              >
+            </div>
+            <dl
+              class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4"
+            >
+              <div class="flex flex-col-reverse">
+                <dt class="text-base leading-7 text-gray-300">
+                  Offices worldwide
+                </dt>
+                <dd
+                  class="text-2xl font-bold leading-9 tracking-tight text-white"
+                >
+                  12
+                </dd>
+              </div>
+              <div class="flex flex-col-reverse">
+                <dt class="text-base leading-7 text-gray-300">
+                  Full-time colleagues
+                </dt>
+                <dd
+                  class="text-2xl font-bold leading-9 tracking-tight text-white"
+                >
+                  300+
+                </dd>
+              </div>
+              <div class="flex flex-col-reverse">
+                <dt class="text-base leading-7 text-gray-300">
+                  Hours per week
+                </dt>
+                <dd
+                  class="text-2xl font-bold leading-9 tracking-tight text-white"
+                >
+                  40
+                </dd>
+              </div>
+              <div class="flex flex-col-reverse">
+                <dt class="text-base leading-7 text-gray-300">Paid time off</dt>
+                <dd
+                  class="text-2xl font-bold leading-9 tracking-tight text-white"
+                >
+                  Unlimited
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="AboutUs">
+      <div
+        class="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:overflow-visible lg:px-0"
+      >
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <svg
+            class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+            aria-hidden="true"
+          >
+            <defs>
+              <pattern
+                id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+                width="200"
+                height="200"
+                x="50%"
+                y="-1"
+                patternUnits="userSpaceOnUse"
+              >
+                <path d="M100 200V.5M.5 .5H200" fill="none" />
+              </pattern>
+            </defs>
+            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+              <path
+                d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                stroke-width="0"
+              />
+            </svg>
+            <rect
+              width="100%"
+              height="100%"
+              stroke-width="0"
+              fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"
+            />
+          </svg>
+        </div>
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-start lg:gap-y-10"
+        >
+          <div
+            class="lg:col-span-2 lg:col-start-1 lg:row-start-1 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+          >
+            <div class="lg:pr-4">
+              <div class="lg:max-w-lg">
+                <p class="text-base font-semibold leading-7 text-indigo-600">
+                  Deploy faster
+                </p>
+                <h1
+                  class="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                >
+                  A better workflow
+                </h1>
+                <p class="mt-6 text-xl leading-8 text-gray-700">
+                  Elements should not be located in just any place, not in an
+                  inconvenient area, in the middle of nowhere. Being higher,
+                  place your things, properly, in a balanced manner. Aim to live
+                  a life full of vigor and energy.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="-ml-12 -mt-12 p-12 lg:sticky lg:top-4 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:overflow-hidden"
+          >
+            <img
+              class="w-[48rem] max-w-none rounded-xl bg-gray-900 shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem]"
+              src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+              alt=""
+            />
+          </div>
+          <div
+            class="lg:col-span-2 lg:col-start-1 lg:row-start-2 lg:mx-auto lg:grid lg:w-full lg:max-w-7xl lg:grid-cols-2 lg:gap-x-8 lg:px-8"
+          >
+            <div class="lg:pr-4">
+              <div
+                class="max-w-xl text-base leading-7 text-gray-700 lg:max-w-lg"
+              >
+                <p>
+                  Mass communication facilities of various forms, influential.
+                  Dignity resides in one's own laughter. The structure of life
+                  is always present in a way that is valuable and rich in
+                  diversity. Presented with pain is a fact. Hatred of similar
+                  laughter, living variations, it is neither here nor there.
+                  Mass communication facilities of various forms, influential.
+                  Dignity resides in one's own laughter. The structure of life
+                  is always present in a way that is valuable and rich in
+                  diversity.
+                </p>
+                <ul role="list" class="mt-8 space-y-8 text-gray-600">
+                  <li class="flex gap-x-3">
+                    <svg
+                      class="mt-1 h-5 w-5 flex-none text-indigo-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 101.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span
+                      ><strong class="font-semibold text-gray-900"
+                        >Push to deploy.</strong
+                      >
+                      Lorem ipsum, dolor sit amet, consectetur adipisicing elit.
+                      Greater obstacles prevent taking on responsibilities, such
+                      as pain, desire, and pleasant reasons.</span
+                    >
+                  </li>
+                  <li class="flex gap-x-3">
+                    <svg
+                      class="mt-1 h-5 w-5 flex-none text-indigo-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span
+                      ><strong class="font-semibold text-gray-900"
+                        >SSL certificates.</strong
+                      >
+                      Animated elements of great importance are present but not
+                      undesirable. Those who indulge in leisure and
+                      enjoyment.</span
+                    >
+                  </li>
+                  <li class="flex gap-x-3">
+                    <svg
+                      class="mt-1 h-5 w-5 flex-none text-indigo-600"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="M4.632 3.533A2 2 0 016.577 2h6.846a2 2 0 011.945 1.533l1.976 8.234A3.489 3.489 0 0016 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234z"
+                      />
+                      <path
+                        fill-rule="evenodd"
+                        d="M4 13a2 2 0 100 4h12a2 2 0 100-4H4zm11.24 2a.75.75 0 01.75-.75H16a.75.75 0 01.75.75v.01a.75.75 0 01-.75.75h-.01a.75.75 0 01-.75-.75V15zm-2.25-.75a.75.75 0 00-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 00.75-.75V15a.75.75 0 00-.75-.75h-.01z"
+                        clip-rule="evenodd"
+                      />
+                    </svg>
+                    <span
+                      ><strong class="font-semibold text-gray-900"
+                        >Database backups.</strong
+                      >
+                      With the smooth adjustment, the vehicle was a major factor
+                      in the basket's arrangement. And great is the seat of the
+                      flexible framework.</span
+                    >
+                  </li>
+                </ul>
+                <p class="mt-8">
+                  And life is facilitated by the ease of large lake comforts.
+                  The life of the wise one hates it. That ease is disturbed by
+                  the author's dignified fermentation. The lake is wide with
+                  adjustments and courses in it. Mauris varies his performance
+                  and elevations with these growths. Flexibility builds up with
+                  time. With it, the edge of the order is secure.
+                </p>
+                <h2
+                  class="mt-16 text-2xl font-bold tracking-tight text-gray-900"
+                >
+                  No server? No problem.
+                </h2>
+                <p class="mt-6">
+                  In the course of the order, pain is a key, and also in
+                  obtaining consequences. The arc of flexibility itself is a
+                  small part. The quiver, the way of life, is an interval, and
+                  indeed, the result is a small performance. Maecenas is set in
+                  the framework, and the heights are high. The course itself is
+                  a ridiculous path. The basket is named for its emptiness and
+                  its width, the tip itself, and it is connected by its width.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="products">
+      <div class="bg-white py-24 sm:py-32">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div class="mx-auto max-w-2xl sm:text-center">
+            <h2
+              class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+            >
+              Simple no-tricks pricing
+            </h2>
+            <p class="mt-6 text-lg leading-8 text-gray-600">
+              Distinction and nothingness free him, and nor labor by certain
+              ones. Often and almost just as a way wishes that there is no
+              pleasure in it. I will explain it so that it is clear
+            </p>
+          </div>
+          <div
+            class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:max-w-none"
+          >
+            <div class="p-8 sm:p-10 lg:flex-auto">
+              <h3 class="text-2xl font-bold tracking-tight text-gray-900">
+                Lifetime membership
+              </h3>
+              <p class="mt-6 text-base leading-7 text-gray-600">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. So,
+                love is something you enjoy, and others don't care about what's
+                left.
+              </p>
+              <div class="mt-10 flex items-center gap-x-4">
+                <h4
+                  class="flex-none text-sm font-semibold leading-6 text-indigo-600"
+                >
+                  What’s included
+                </h4>
+                <div class="h-px flex-auto bg-gray-100"></div>
+              </div>
+              <ul
+                role="list"
+                class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 text-gray-600 sm:grid-cols-2 sm:gap-6"
+              >
+                <li class="flex gap-x-3">
+                  <svg
+                    class="h-6 w-5 flex-none text-indigo-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Private forum access
+                </li>
+                <li class="flex gap-x-3">
+                  <svg
+                    class="h-6 w-5 flex-none text-indigo-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Member resources
+                </li>
+                <li class="flex gap-x-3">
+                  <svg
+                    class="h-6 w-5 flex-none text-indigo-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Entry to annual conference
+                </li>
+                <li class="flex gap-x-3">
+                  <svg
+                    class="h-6 w-5 flex-none text-indigo-600"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                  Official member t-shirt
+                </li>
+              </ul>
+            </div>
+            <div
+              class="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0"
+            >
+              <div
+                class="rounded-2xl bg-gray-50 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16"
+              >
+                <div class="mx-auto max-w-xs px-8">
+                  <p class="text-base font-semibold text-gray-600">
+                    Pay once, own it forever
+                  </p>
+                  <p class="mt-6 flex items-baseline justify-center gap-x-2">
+                    <span
+                      class="text-5xl font-bold tracking-tight text-gray-900"
+                      >$349</span
+                    >
+                    <span
+                      class="text-sm font-semibold leading-6 tracking-wide text-gray-600"
+                      >USD</span
+                    >
+                  </p>
+                  <a
+                    href="#"
+                    class="mt-10 block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    >Get access</a
+                  >
+                  <p class="mt-6 text-xs leading-5 text-gray-600">
+                    Invoices and receipts available for easy company
+                    reimbursement
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="subscribe">
+      <!--
+      This example requires some changes to your config:
+      
+      ```
+      // tailwind.config.js
+      module.exports = {
+        // ...
+        plugins: [
+          // ...
+          require('@tailwindcss/forms'),
+        ],
+      }
+      ```
+    -->
+      <div
+        class="relative isolate overflow-hidden bg-gray-900 py-16 sm:py-24 lg:py-32"
+      >
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <div
+            class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2"
+          >
+            <div class="max-w-xl lg:max-w-lg">
+              <h2
+                class="text-3xl font-bold tracking-tight text-white sm:text-4xl"
+              >
+                Subscribe to our newsletter.
+              </h2>
+              <p class="mt-4 text-lg leading-8 text-gray-300">
+                Enim, I'm here, consectetur adipisicing incididunt sed do
+                eiusmod tempor.
+              </p>
+              <div class="mt-6 flex max-w-md gap-x-4">
+                <label for="email-address" class="sr-only">Email address</label>
+                <input
+                  id="email-address"
+                  name="email"
+                  type="email"
+                  autocomplete="email"
+                  required
+                  class="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-indigo-500 sm:text-sm sm:leading-6"
+                  placeholder="Enter your email"
+                />
+                <button
+                  type="submit"
+                  class="flex-none rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </div>
+            <dl
+              class="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2"
+            >
+              <div class="flex flex-col items-start">
+                <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                  <svg
+                    class="h-6 w-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-9-6h.008v.008H12v-.008zM12 15h.008v.008H12V15zm0 2.25h.008v.008H12v-.008zM9.75 15h.008v.008H9.75V15zm0 2.25h.008v.008H9.75v-.008zM7.5 15h.008v.008H7.5V15zm0 2.25h.008v.008H7.5v-.008zm6.75-4.5h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V15zm0 2.25h.008v.008h-.008v-.008zm2.25-4.5h.008v.008H16.5v-.008zm0 2.25h.008v.008H16.5V15z"
+                    />
+                  </svg>
+                </div>
+                <dt class="mt-4 font-semibold text-white">Weekly articles</dt>
+                <dd class="mt-2 leading-7 text-gray-400">
+                  Not working to love is to seek freedom.
+                </dd>
+              </div>
+              <div class="flex flex-col items-start">
+                <div class="rounded-md bg-white/5 p-2 ring-1 ring-white/10">
+                  <svg
+                    class="h-6 w-6 text-white"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M10.05 4.575a1.575 1.575 0 10-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 013.15 0v1.5m-3.15 0l.075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 013.15 0V15M6.9 7.575a1.575 1.575 0 10-3.15 0v8.175a6.75 6.75 0 006.75 6.75h2.018a5.25 5.25 0 003.712-1.538l1.732-1.732a5.25 5.25 0 001.538-3.712l.003-2.024a.668.668 0 01.198-.471 1.575 1.575 0 10-2.228-2.228 3.818 3.818 0 00-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0116.35 15m.002 0h-.002"
+                    />
+                  </svg>
+                </div>
+                <dt class="mt-4 font-semibold text-white">No spam</dt>
+                <dd class="mt-2 leading-7 text-gray-400">
+                  Official except for labor ut isn't proident non adipisicing.
+                  Voluptate incididunt anim.
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div
+          class="absolute left-1/2 top-0 -z-10 -translate-x-1/2 blur-3xl xl:-top-6"
+          aria-hidden="true"
+        >
+          <div
+            class="aspect-[1155/678] w-[72.1875rem] bg-gradient-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+            style="
+              clip-path: polygon(
+                74.1% 44.1%,
+                100% 61.6%,
+                97.5% 26.9%,
+                85.5% 0.1%,
+                80.7% 2%,
+                72.5% 32.5%,
+                60.2% 62.4%,
+                52.4% 68.1%,
+                47.5% 58.3%,
+                45.2% 34.5%,
+                27.5% 76.7%,
+                0.1% 64.9%,
+                17.9% 100%,
+                27.6% 76.8%,
+                76.1% 97.7%,
+                74.1% 44.1%
+              );
+            "
+          ></div>
+        </div>
+      </div>
+    </section>
+    <!--tailwind script-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--tailwind script-->
+  </body>
+</html>
